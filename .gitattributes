@@ -1,0 +1,2 @@
+# Define arquivos .sc para usar as regras de destaque do C++
+*.sc linguist-language=C++
