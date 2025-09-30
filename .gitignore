@@ -1,0 +1,71 @@
+# Arquivo .gitignore para o Live PenOS (LPeOS)
+# Foco em Micro-Kernel, linguagens de baixo nível e C$
+
+# 1. ARTEFATOS DE COMPILAÇÃO E SAÍDA
+# Estes são os arquivos binários e temporários gerados pelo compilador C$ e o linker.
+# Eles NUNCA devem ser versionados.
+################################################################################
+
+# Arquivos Objeto e Bibliotecas
+*.o
+*.a
+*.so
+*.out
+*.elf
+*.dll
+*.lib
+
+# Executáveis Finais
+*.bin               # Binários do bootloader e do Micro-Kernel LPeOS
+*.exe
+/lpeos.sys          # O arquivo final do sistema (exemplo)
+
+# Arquivos de Linker/Mapa de Símbolos
+*.map
+*.asm.o             # Arquivos objeto de Assembly
+*.asm.bin           # Binários de Assembly
+
+# Arquivos Intermediários do Compilador C$
+# Assumindo que C$ gera código C/C++ intermediário para o GCC/Clang
+*.c.intermediate
+*.cpp.intermediate
+
+# Diretórios de Build e Output
+/build/
+/output/
+/tmp/
+
+# Arquivos de Log e Debug
+*.log
+*.err
+*.dmp
+# 2. ARTEFATOS DE SISTEMA/IDE/CACHE
+# Arquivos gerados pelo sistema operacional host e ferramentas de desenvolvimento.
+################################################################################
+
+# macOS
+.DS_Store
+.Spotlight-V100
+.Trash-*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# IDEs (Visual Studio Code, JetBrains, etc.)
+.vscode/
+.idea/
+*.suo
+*.user
+*.pdb
+# 3. CONFIGURAÇÕES LOCAIS
+# Arquivos de configuração que são específicos da sua máquina e não devem ser compartilhados
+################################################################################
+
+# Configurações de compilação local (se existirem)
+local.config
+.toolchain_local
+
+# Arquivos de chaves de hardware ou simulação
+*.key
+*.cert
